@@ -91,10 +91,5 @@ python experiments/baseline_runner.py
 
 ---
 
-## 📝 License
-
-Licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
----
 
 **© 2025** Rezaul Haque / East West University  
