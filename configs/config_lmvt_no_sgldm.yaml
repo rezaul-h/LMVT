@@ -1,0 +1,33 @@
+ablations:
+  use_cbam: true
+  use_mhsa: true
+  use_sgldm: false
+augmentation:
+  brightness_contrast: true
+  horizontal_flip: true
+  rotation: 15
+  use_albumentations: true
+  vertical_flip: true
+cross_validation:
+  folds: 10
+  stratified: true
+dataset:
+  name: LC25000
+  num_classes: 5
+  path: ./data/LC25000
+  validation_split: 0.2
+logging:
+  log_dir: ./logs
+  log_file: train.log
+model:
+  name: lmvt
+training:
+  batch_size: 32
+  epochs: 50
+  gamma: 0.1
+  learning_rate: 0.001
+  optimizer: Adam
+  scheduler: StepLR
+  step_size: 10
+  use_fp16: false
+  weight_decay: 0.0001

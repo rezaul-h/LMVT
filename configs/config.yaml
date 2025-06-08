@@ -1,0 +1,44 @@
+project:
+  name: LMVT_Lung_Cancer
+  output_dir: outputs/
+  seed: 42
+  device: cuda  # or "cpu"
+
+data:
+  dataset: IQ-OTH
+  data_dir: ./datasets/IQ-OTH/
+  img_size: 224
+  batch_size: 32
+  num_workers: 4
+  num_classes: 3
+  folds: 10
+  stratified: true
+
+dataset:
+  name: "IQ-OTH"  # or "LC25000", "LIDC-IDRI"
+  path: "./data/IQ-OTH"
+  input_size: 224
+  num_classes: 3
+
+dataloader:
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+
+training:
+  epochs: 50
+  lr: 0.0001
+  optimizer: adam
+  loss_fn: cross_entropy
+  scheduler: cosine
+  early_stopping_patience: 5
+
+model:
+  name: LMVT
+  use_cbam: true
+  use_sglmd: true
+
+logging:
+  log_dir: logs/
+  log_level: INFO
+  use_tensorboard: true

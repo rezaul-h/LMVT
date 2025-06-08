@@ -1,0 +1,24 @@
+datasets:
+  iqoth:
+    path: "data/IQ-OTH_NCCD"
+    classes: ["Benign", "Malignant", "Normal"]
+    num_classes: 3
+
+  lc25000:
+    path: "data/LC25000"
+    classes: ["Adeno", "Squamous", "Benign", "Normal", "Large_Cell"]
+    num_classes: 5
+
+  lidc_idri:
+    path: "data/LIDC-IDRI"
+    external_validation: true
+    num_classes: 3
+
+batch_size: 32
+resize_dim: 224
+normalization: "z-score"
+augmentation:
+  horizontal_flip: true
+  vertical_flip: true
+  rotation: 15
+  gaussian_blur: true
